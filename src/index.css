@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("../public/static/BG.png"); */
+  background-color: #21262c;
+}
+
+.results-page {
+  background: #7e57c6;
 }
 
 code {
