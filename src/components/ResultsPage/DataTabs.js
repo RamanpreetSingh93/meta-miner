@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchResultsView from "./SearchResultsView";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faFilePdf, faFileWord } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +6,10 @@ import { faAngleLeft, faAngleRight, faFilePdf, faFileWord } from "@fortawesome/f
 import "./DataTabs.css";
 
 const DataTabs = () => {
+  const [checked, setChecked] = useState(true)
   return (
     <div className="tab-wrap">
-      <input type="radio" id="tab1" name="tabGroup1" className="tab" />
+      <input type="radio" id="tab1" name="tabGroup1" className="tab" checked={checked} onChange={() => { setChecked(!checked) }} />
       <label for="tab1">
         <span style={{ display: "flex" }}>
           <p style={{ paddingRight: "8px" }}>All</p>
@@ -17,7 +18,7 @@ const DataTabs = () => {
           }}>3</p>
         </span>
       </label>
-      <input type="radio" id="tab2" name="tabGroup1" className="tab" />
+      <input type="radio" id="tab2" name="tabGroup1" className="tab" onChange={() => { setChecked(false) }} />
       <label for="tab2">
         <span style={{ display: "flex" }}>
           <p style={{ paddingRight: "8px" }}><FontAwesomeIcon icon={faFileWord} style={{ color: "#beabe2" }} /> .docx</p>
@@ -26,7 +27,7 @@ const DataTabs = () => {
           }}>1</p>
         </span>
       </label>
-      <input type="radio" id="tab3" name="tabGroup1" className="tab" />
+      <input type="radio" id="tab3" name="tabGroup1" className="tab" onChange={() => { setChecked(false) }} />
       <label for="tab3">
         <span style={{ display: "flex" }}>
           <p style={{ paddingRight: "8px" }}><FontAwesomeIcon icon={faFilePdf} style={{ color: "#beabe2" }} /> .pdf</p>
