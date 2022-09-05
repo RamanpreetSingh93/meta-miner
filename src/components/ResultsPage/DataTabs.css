@@ -18,6 +18,7 @@
 
 .tab {
   display: none;
+  color: #000;
 }
 
 .tab:checked:nth-of-type(1)~.tab__content {
@@ -34,7 +35,7 @@
   text-shadow: 0 0 0;
 }
 
-.tab:checked:nth-of-type(2)~.tab__content.docx {
+.tab:checked:nth-of-type(2)~.tab__content {
   opacity: 1;
   -webkit-transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
   transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
@@ -77,20 +78,21 @@
 }
 
 .tab:checked+label {
-  background-color: #1b2026;
-  box-shadow: 0 -1px 0 #1b2026 inset;
+  background-color: #f0f3fb;
+  box-shadow: 0 -1px 0 #f0f3fb inset;
   cursor: default;
+  color: #000;
 }
 
 .tab+label {
-  box-shadow: 0 -1px 0 #21262c inset;
+  box-shadow: 0 -1px 0 #fff inset;
   border-radius: 6px 6px 0 0;
   cursor: pointer;
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   text-align: center;
-  background-color: #21262c;
+  background-color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -113,7 +115,7 @@
   left: 0;
   -webkit-transform: translateY(-3px);
   transform: translateY(-3px);
-  background-color: #1b2026;
+  background-color: #f0f3fb;
   height: max-content;
 }
 
@@ -121,4 +123,109 @@
   display: flex;
   padding-left: 50%;
   justify-content: space-evenly;
+}
+
+
+
+/* CSS FOR DARK THEME TABS */
+
+.tab-dark {
+  display: none;
+}
+
+.tab-dark:checked:nth-of-type(1)~.tab__content-dark {
+  opacity: 1;
+  -webkit-transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease, 0.8s -webkit-transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+
+.tab-dark:checked:nth-of-type(2)~.tab__content-dark {
+  opacity: 1;
+  -webkit-transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease, 0.8s -webkit-transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+
+.tab-dark:checked:nth-of-type(3)~.tab__content-dark.pdf {
+  opacity: 1;
+  -webkit-transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s -webkit-transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  transition: 0.5s opacity ease-in, 0.8s transform ease, 0.8s -webkit-transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+
+.tab-dark:first-of-type:not(:last-of-type)+label {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.tab-dark:not(:first-of-type):not(:last-of-type)+label {
+  border-radius: 0;
+}
+
+.tab-dark:last-of-type:not(:first-of-type)+label {
+  border-top-left-radius: 50;
+  border-bottom-left-radius: 0;
+}
+
+.tab-dark:checked+label {
+  background-color: #1b2026;
+  box-shadow: 0 -1px 0 #1b2026 inset;
+  cursor: default;
+}
+
+.tab-dark+label {
+  box-shadow: 0 -1px 0 #21262c inset;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  background-color: #21262c;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  -webkit-transition: 0.3s background-color ease, 0.3s box-shadow ease;
+  transition: 0.3s background-color ease, 0.3s box-shadow ease;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.tab__content-dark {
+  padding: 10px 25px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  background-color: #1b2026;
+  height: max-content;
 }

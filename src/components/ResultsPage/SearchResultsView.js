@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./SearchResultsView.css"
 
-const SearchResultsView = () => {
+const SearchResultsView = ({ backGroundValue }) => {
+
+  // TODO: change data backgrounds according to the theme change.
+  console.log("BACKGROUNDVALUES IN SEARCH RESULTS:::> ", backGroundValue);
+  useEffect(() => {
+    backGroundValue === 'dark-theme'
+      ? document.getElementsByClassName('search-result-view')[0]
+        ? (Array.from(document.getElementsByClassName('search-result-view')).forEach(el => {
+          return (el.className = 'search-result-view');
+        }))
+        : (Array.from(document.getElementsByClassName(
+          'search-result-view-light'
+        )).forEach(el => el.className = 'search-result-view'))
+      : document.getElementsByClassName('search-result-view')[0]
+        ? (Array.from(document.getElementsByClassName('search-result-view')).forEach(el => el.className = 'search-result-view-light'))
+        : (Array.from(document.getElementsByClassName('search-result-view-light')).forEach(el => el.className = 'search-result-view-light'))
+
+    backGroundValue === 'dark-theme'
+      ? document.getElementsByClassName('search-results')[0]
+        ? (Array.from(document.getElementsByClassName('search-results')).forEach(el => el.className = 'search-results'))
+        : (Array.from(document.getElementsByClassName(
+          'search-results-light'
+        )).forEach(el => el.className = 'search-results'))
+      : document.getElementsByClassName('search-results')[0]
+        ? (Array.from(document.getElementsByClassName('search-results')).forEach(el => el.className = 'search-results-light'))
+        : (Array.from(document.getElementsByClassName('search-results-light')).forEach(el => el.className = 'search-results-light'))
+  }, [backGroundValue])
+
   return (
     <div className='search-result-view'>
       <div className='search-results'>
@@ -18,15 +45,16 @@ const SearchResultsView = () => {
             <p>Snippet: <span style={{ color: "grey" }}>Project Fire Protection and Detection</span></p>
           </div>
         </div>
-      </div>
-      <div className='file-type'>
-        <p style={{
-          borderRadius: "25px", background: "#7e57c6", width: "80px", height: "30px", color: "white", fontWeight: "bold"
-        }}>docx</p>
-        <div className='page-count'>
-          <p>Page No. <span style={{ color: "#7e57c6", fontWeight: "bold" }}>12</span></p>
+        <div className='file-type'>
+          <p style={{
+            borderRadius: "25px", background: "#7e57c6", width: "80px", height: "30px", color: "white", fontWeight: "bold"
+          }}>docx</p>
+          <div className='page-count'>
+            <p>Page No. <span style={{ color: "#7e57c6", fontWeight: "bold" }}>12</span></p>
+          </div>
         </div>
       </div>
+
     </div>
 
   );

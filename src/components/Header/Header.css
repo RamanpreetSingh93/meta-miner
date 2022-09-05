@@ -1,9 +1,21 @@
 .page-header {
     display: flex;
     flex-direction: row;
+    background-color: #f0f3fb;
+    justify-content: space-between;
+    flex: auto;
+    padding-top: 20px;
+    color: black;
+}
+
+.page-header-light {
+    display: flex;
+    flex-direction: row;
     background-color: #0e1118;
     justify-content: space-between;
     flex: auto;
+    padding-top: 20px;
+    color: white;
 }
 
 .page-toggle {
@@ -14,4 +26,5 @@
 
 .profile-info {
     padding-left: 40px;
+    padding-right: 110px;
 }

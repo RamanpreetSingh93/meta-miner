@@ -1,12 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchResultsView from "./SearchResultsView";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faFilePdf, faFileWord } from "@fortawesome/free-solid-svg-icons";
 
 import "./DataTabs.css";
 
-const DataTabs = () => {
+const DataTabs = ({ backGroundValue }) => {
   const [checked, setChecked] = useState(true)
+  console.log("BACKGROUND VALUE in DATA TABS::::> ", backGroundValue);
+  useEffect(() => {
+    backGroundValue === 'light-theme'
+      ? document.getElementsByClassName('tab')[0]
+        ? (Array.from(document.getElementsByClassName('tab')).forEach(el => {
+          return el.className = 'tab'
+        }))
+        : (Array.from(document.getElementsByClassName(
+          'tab-dark'
+        )).forEach(el => {
+          return el.className = 'tab'
+        }))
+      : document.getElementsByClassName('tab')[0]
+        ? (Array.from(document.getElementsByClassName('tab')).forEach(el => {
+          return el.className = 'tab-dark'
+        }))
+        : (Array.from(document.getElementsByClassName('tab-dark')).forEach(el => {
+          return el.className = 'tab-dark'
+        }))
+
+    backGroundValue === 'light-theme'
+      ? document.getElementsByClassName('tab__content')[0]
+        ? (Array.from(document.getElementsByClassName('tab__content')).forEach(el => {
+          return el.className = 'tab__content'
+        }))
+        : (Array.from(document.getElementsByClassName(
+          'tab__content-dark'
+        )).forEach(el => {
+          return el.className = 'tab__content'
+        }))
+      : document.getElementsByClassName('tab__content')[0]
+        ? (Array.from(document.getElementsByClassName('tab__content')).forEach(el => {
+          return el.className = 'tab__content-dark'
+        }))
+        : (Array.from(document.getElementsByClassName('tab__content-dark')).forEach(el => {
+          return el.className = 'tab__content-dark'
+        }))
+  }, [backGroundValue])
+
+
   return (
     <div className="tab-wrap">
       <input type="radio" id="tab1" name="tabGroup1" className="tab" checked={checked} onChange={() => { setChecked(!checked) }} />
@@ -24,7 +64,7 @@ const DataTabs = () => {
           <p style={{ paddingRight: "8px" }}><FontAwesomeIcon icon={faFileWord} style={{ color: "#beabe2" }} /> .docx</p>
           <p style={{
             borderRadius: "20px", background: "#0e1118", paddingTop: "1px", width: "20px", height: "20px", color: "white", marginTop: "auto", fontSize: "12px",
-          }}>1</p>
+          }}>3</p>
         </span>
       </label>
       <input type="radio" id="tab3" name="tabGroup1" className="tab" onChange={() => { setChecked(false) }} />
@@ -33,7 +73,7 @@ const DataTabs = () => {
           <p style={{ paddingRight: "8px" }}><FontAwesomeIcon icon={faFilePdf} style={{ color: "#beabe2" }} /> .pdf</p>
           <p style={{
             borderRadius: "20px", background: "#0e1118", paddingTop: "1px", width: "20px", height: "20px", color: "white", marginTop: "auto", fontSize: "12px",
-          }}>1</p>
+          }}>0</p>
         </span>
       </label>
       <div className='extra-btns'>
@@ -45,13 +85,13 @@ const DataTabs = () => {
         }}><FontAwesomeIcon icon={faAngleLeft} style={{ color: "#fff", paddingRight: "20px" }} />1<FontAwesomeIcon icon={faAngleRight} style={{ color: "#fff", paddingLeft: "20px" }} /></p>
       </div>
       <div className="tab__content">
-        <SearchResultsView />
+        <SearchResultsView backGroundValue={backGroundValue} />
       </div>
-      <div className="tab__content docx">
-        <SearchResultsView />
+      <div className="tab__content">
+        <SearchResultsView backGroundValue={backGroundValue} />
       </div>
       <div className="tab__content pdf">
-        <SearchResultsView />
+        <SearchResultsView backGroundValue={backGroundValue} />
       </div>
     </div>
   );

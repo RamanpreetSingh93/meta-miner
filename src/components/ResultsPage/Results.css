@@ -1,8 +1,19 @@
 .results-page {
     padding-top: 70px;
-    background: linear-gradient(0deg, #21262c 90%, #0e1118 10%);
+    background: linear-gradient(0deg, #21262c  90%, #0e1118 10%);
+}
+
+.results-page-light {
+    padding-top: 70px;
+    background: linear-gradient(0deg, #fff 90%, #f0f3fb 10%);
+}
+
+.d-tabs-light {
+    padding-top: 100px;
+    background-color: white;
 }
 
 .d-tabs {
     padding-top: 100px;
+    background-color: #21262c;
 }
