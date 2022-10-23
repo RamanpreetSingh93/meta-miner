@@ -1,0 +1,20 @@
+.landing-content {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 280px;
+    background-image: url("../../../public/static/BG.png");
+    background-size: auto 100%;
+    color: white;
+}
+
+
+.landing-content-light {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 280px;
+    background-image: url("../../../public/static/BG 2.png");
+    background-size: auto 100%;
+    color: black;
+}
