@@ -85,8 +85,8 @@ const DataTabs: React.FunctionComponent<dataTabsProps> = (props: dataTabsProps) 
         <p style={{ color: "#424548", fontWeight: "bold", paddingTop: "25px", paddingRight: "15px" }}>3 Results Found</p>
         <p style={{ color: "#424548", fontWeight: "bold", paddingTop: "25px", paddingRight: "15px" }}>1-10 of 3</p>
         <p style={{
-          borderRadius: "25px", background: "#0e1118", paddingTop: "2px", width: "80px", height: "30px", color: "white", marginTop: "auto"
-        }}><FontAwesomeIcon icon={faAngleLeft} style={{ color: "#fff", paddingRight: "20px" }} />1<FontAwesomeIcon icon={faAngleRight} style={{ color: "#fff", paddingLeft: "20px" }} /></p>
+          borderRadius: "25px", background: "#0e1118", paddingTop: "4px", width: "80px", height: "30px", color: "white", marginTop: "35px"
+        }}><FontAwesomeIcon icon={faAngleLeft} style={{ color: "#fff", paddingRight: "20px", paddingTop: "5px" }} />1<FontAwesomeIcon icon={faAngleRight} style={{ color: "#fff", paddingLeft: "20px" }} /></p>
       </div>
       <div className="tab__content">
         <SearchResultsView backGroundValue={props.backGroundValue} />

@@ -1,15 +1,20 @@
 .searchbar {
     margin-bottom: auto;
     margin-top: auto;
-    // height: 60px;
     width: 800px;
-    margin-left: 550px;
+    align-items: center;
     background-color: white;
     border-radius: 30px;
     padding: 10px;
     display: flex;
     justify-content: center;
     box-shadow: 3px 3px 15px #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    margin-top: 75px;
+    transform: translate(-50%, -50%);
 }
 
 .search_input {

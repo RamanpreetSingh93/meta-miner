@@ -1,20 +1,22 @@
 .landing-content {
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     padding-top: 280px;
     background-image: url("../../../public/static/BG.png");
     background-size: auto 100%;
     color: white;
+    background-position: center center;
 }
 
 
 .landing-content-light {
-    height: 60vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     padding-top: 280px;
     background-image: url("../../../public/static/BG 2.png");
     background-size: auto 100%;
     color: black;
+    background-position: center center;
 }
